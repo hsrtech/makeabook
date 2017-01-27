@@ -2,63 +2,62 @@
   .book-body {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0px;
     overflow-y: auto;
     bottom: 0;
     right: 0;
 
-    .book-body-inner {
-      @extend .book-body;
-    }
-
-    .page-wrapper {
-        position: relative;
-        outline: 0;
-
-        .page-inner {
-          position: relative;
-          left: 0px;
-          transition: 300ms ease left;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 20px 0 40px;
-      }
+    .page-inner {
+      transition: 0.3s ease left;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0 40px;
     }
   }
 
   .book-header {
-      overflow: visible;
-      height: 50px;
-      padding: 10px 8px;
-      z-index: 2;
-      font-size: .85em;
-      box-sizing: border-box;
+    padding: 10px 8px;
+    font-size: .85em;
+    box-sizing: border-box;
+    text-align: center;
 
-      a {
-        color: #ccc;
-        text-decoration: none;
-        text-transform: uppercase;
-        margin: 0 15px;
+    a {
+      color: #ccc;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 15px;
 
-        &:hover {
-          color: #444;
-        }
+      &:hover {
+        color: #444;
       }
+    }
+
+    h1 {
+      @extend .header-inner;
+    }
   }
 }
 
-li {
-  margin-bottom: 15px;
+.header-inner {
+  display: inline-block;
+  li {
+    @extend .header-inner;
+  }
 }
 
 .main-nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 0;
   height: 100%;
   background: #3B3B3B;
   overflow-y: auto;
   transition: width 0.3s ease;
+
+  li {
+    margin-bottom: 15px;
+  }
+
   a {
     display: block;
     background: linear-gradient(#3E3E3E, #383838);
@@ -66,10 +65,12 @@ li {
     border-bottom: 1px solid #2E2E2E;
     color: white;
     padding: 15px;
+
     &:hover, &:focus {
       background: linear-gradient(#484848, #383838);
     }
   }
+
   &:after {
     content: "";
     position: absolute;
@@ -81,12 +82,20 @@ li {
   }
 }
 
-#main-nav:target {
-  width: 20%;
+.pull-left {
+  float: left;
 }
-#main-nav:target + .book {
-  width: 80%;
-  .open-menu {
-     display: none;
+
+.pull-right {
+  float: right;
+}
+
+.sidebar-visible {
+  #main-nav {
+    width: 300px;
+  }
+
+  .book-body {
+    left: 300px;
   }
 }

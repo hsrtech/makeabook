@@ -1,6 +1,5 @@
-@charset "UTF-8";
 /* Breakpoints
-ΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇôΓÇô */
+_____________________________________________ */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -53,6 +52,55 @@ table {
 p {
   margin-bottom: 20px; }
 
+/*
+Flaticon icon font: Flaticon
+Creation date: 27/01/2017 10:28
+*/
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg"); } }
+.fi:before {
+  display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+.flaticon-facebook-logo:before {
+  content: "\f100"; }
+
+.flaticon-font:before {
+  content: "\f101"; }
+
+.flaticon-left-arrow:before {
+  content: "\f102"; }
+
+.flaticon-menu:before {
+  content: "\f103"; }
+
+.flaticon-right-arrow:before {
+  content: "\f104"; }
+
+.flaticon-sharing-interface:before {
+  content: "\f105"; }
+
+.flaticon-twitter-logo-silhouette:before {
+  content: "\f106"; }
+
 body {
   font-weight: 400;
   font-family: 'Crimson Text', serif;
@@ -93,30 +141,23 @@ h6 {
   margin-bottom: 0px;
   display: inline-block; }
 
-.book .book-body, .book .book-body .book-body-inner {
+.book .book-body {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
   overflow-y: auto;
   bottom: 0;
   right: 0; }
-  .book .book-body .page-wrapper {
-    position: relative;
-    outline: 0; }
-    .book .book-body .page-wrapper .page-inner {
-      position: relative;
-      left: 0px;
-      transition: 300ms ease left;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px 0 40px; }
+  .book .book-body .page-inner {
+    transition: 0.3s ease left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0 40px; }
 .book .book-header {
-  overflow: visible;
-  height: 50px;
   padding: 10px 8px;
-  z-index: 2;
   font-size: .85em;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-align: center; }
   .book .book-header a {
     color: #ccc;
     text-decoration: none;
@@ -125,17 +166,19 @@ h6 {
     .book .book-header a:hover {
       color: #444; }
 
-li {
-  margin-bottom: 15px; }
+.header-inner, .book .book-header h1, .header-inner li {
+  display: inline-block; }
 
 .main-nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 0;
   height: 100%;
   background: #3B3B3B;
   overflow-y: auto;
   transition: width 0.3s ease; }
+  .main-nav li {
+    margin-bottom: 15px; }
   .main-nav a {
     display: block;
     background: linear-gradient(#3E3E3E, #383838);
@@ -154,12 +197,13 @@ li {
     width: 34px;
     background: linear-gradient(left, transparent, rgba(0, 0, 0, 0.4)); }
 
-#main-nav:target {
-  width: 20%; }
+.pull-left {
+  float: left; }
 
-#main-nav:target + .book {
-  width: 80%; }
-  #main-nav:target + .book .open-menu {
-    display: none; }
+.pull-right {
+  float: right; }
 
-/*# sourceMappingURL=style.css.map */
+.sidebar-visible #main-nav {
+  width: 300px; }
+.sidebar-visible .book-body {
+  left: 300px; }
