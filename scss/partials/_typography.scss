@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
+body {
+  font-weight: 400;
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  line-height: 1.2;
+  color: $black;
+  height: 100%;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Julius Sans One', sans-serif;
+  color: #3686be;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+h2 {
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+h4 {
+  font-size: 17px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+h6 {
+  font-size: 13px;
+}
+
+.book-body-inner {
+  h1 {
+    text-align: center;
+    margin-bottom: 0px;
+    display: inline-block;
+  }
+}

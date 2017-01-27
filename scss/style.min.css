@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
+body{font-weight:400;font-family:'Crimson Text',serif;font-size:17px;line-height:1.2;height:100%;color:#333}
+h1,h2,h3,h4,h5,h6{font-family:'Julius Sans One',sans-serif}
+h1{font-size:17px;font-weight:400;color:#7e888b}
+h2{font-size:21px;font-weight:700;margin-bottom:11px}
+h3{font-size:16px;font-weight:400;margin-bottom:22px}
+.book-body-inner h1{text-align:center}
+.book .book-body,.book .book-body .book-body-inner{position:absolute;top:0;left:0;overflow-y:auto;bottom:0;right:0}
+.book .book-body .page-wrapper{position:relative;outline:0}
+.book .book-body .page-wrapper .page-inner{position:relative;left:0;transition:300ms ease left;max-width:800px;margin:0 auto;padding:20px 0 40px}
+li{margin-bottom:10px}
